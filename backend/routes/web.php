@@ -1,18 +1,16 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+// use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-Route::get('/', function () {
+$router->get('/', function () {
     return view('welcome');
+});
+
+$router->group(['prefix' => 'robots'], function () use ($router) {
+    $router->get('list', ['uses' =>  'dictController@getRobots']);
+    $router->get('list2', [dictController::class, 'getRobots']);
+});
+
+$router->get('/frontend', function () {
+    return view('index_combat');
 });
