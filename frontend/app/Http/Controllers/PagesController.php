@@ -12,8 +12,8 @@ class PagesController extends BaseController
 
     public function indexPage () {
         $data = [
-            'header_title' => 'Earth Wars',
-            'title' => 'Основная информация',
+            'header_title' => 'Главная',
+            'title' => 'Главная',
         ];
 
         return view('index', $data);

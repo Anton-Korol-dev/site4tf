@@ -2,17 +2,20 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/assets/bootstrap-5.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Transformers: {{ $header_title }}</title>
+        <title>Transformers: Earth Wars / {{ $header_title }}</title>
     </head>
     <body>
         <header>
-            <img src="/images/Logo/Logo_TfEW.png" alt="Лого Игры" width="261" height="110">
+            <a href="/">
+                <img src="/images/Logo/Logo_TfEW.png" alt="Лого Игры" width="261" height="110">
+            </a>
         </header>
 
-        <h1 class="title">Transformers: {{ $title }}</h1>
+        <h1 class="text-center">Transformers: Earth Wars</h1>
+        <h2 class="text-center">{{ $title }}</h2>
 
         <div class="content">
             @yield('contents')

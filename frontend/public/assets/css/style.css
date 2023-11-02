@@ -17,20 +17,6 @@ header {
     margin-bottom: 20px;
 }
 
-h1 {
-    text-align: center;
-}
-
-h2 {
-    text-decoration: underline;
-    text-decoration-color: grey;
-}
-
-.title {
-    font-size: 30px;
-    color: red;
-}
-
 .cores-green-color {
     color: limegreen;
 }
