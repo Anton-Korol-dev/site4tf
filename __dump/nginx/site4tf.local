@@ -1,0 +1,48 @@
+server {
+	listen 80;
+
+	root /home/anton/projects/site4tf/frontend/public;
+
+	index index.php index.html;
+
+	server_name site4tf.local;
+
+	location / {
+#		try_files $uri $uri/ =404;
+		try_files $uri $uri/ /index.php?$query_string;
+	}
+
+	location ~ \.php$ {
+		include snippets/fastcgi-php.conf;
+		fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+	}
+
+	location ~ /\.ht {
+		deny all;
+	}
+}
+
+
+server {
+	listen 80;
+
+	root /home/anton/projects/site4tf/backend/public;
+
+	index index.php;
+
+	server_name api.site4tf.local;
+
+	location / {
+#		try_files $uri $uri/ =404;
+		try_files $uri $uri/ /index.php?$query_string;
+	}
+
+	location ~ \.php$ {
+		include snippets/fastcgi-php.conf;
+		fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+	}
+
+	location ~ /\.ht {
+		deny all;
+	}
+}
